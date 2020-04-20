@@ -1,5 +1,5 @@
 # Data Lovers
-
+[![Run on Repl.it](https://repl.it/badge/github/MarianaMBarros/SAP004-data-lovers)](https://repl.it/github/MarianaMBarros/SAP004-data-lovers)
 ## Índice
 
 * [1. Preâmbulo](#1-preâmbulo)

@@ -12,6 +12,7 @@ Para acesso à plataforma, o usuário deverá utilizar o link:
 
 ## 2. Usuário (Persona)
 Para o desenvolvimento nas histórias de usuario criamos a persona (representação fictícia do cliente ideal de um negócio).
+
  1 - César - 31 anos
      Solteiro - Relações Publicas
     Gosta de Pokemon desde criança

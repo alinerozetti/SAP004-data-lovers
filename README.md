@@ -40,4 +40,3 @@ HU-4: Pesquisa por filtro.
 HU-5: Login.
 HU-6: pokemon colorido para os que consegui capturar no jogo.
 HU-7: pokemon cinza para os que não consegui capturar no jogo.
-

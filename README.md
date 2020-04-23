@@ -36,7 +36,16 @@ HU-1: Mostar os Pokemons com seus nomes e numeração.
 HU-2: Mostrar dados dos pokemons.
 HU-3: Pesquisa por nome.
 HU-4: Pesquisa por filtro.
-HU-5: Login.
-HU-6: pokemon colorido para os que consegui capturar no jogo.
-HU-7: pokemon cinza para os que não consegui capturar no jogo.
+HU-5: Calculo de Pokemons
+HU-6: Login.
+HU-7: pokemon colorido para os que consegui capturar no jogo.
+HU-8: pokemon cinza para os que não consegui capturar no jogo.
 
+
+## 4. Função do Projeto
+
+## 5. Protótipo
+
+## 6. Testes de Usabilidade
+
+## 7. Considerações

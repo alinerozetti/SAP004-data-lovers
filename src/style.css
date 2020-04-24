@@ -6,7 +6,11 @@
 .fundo{
     background-image: url("../img/fundo.jpg");
     text-align: center;
-    padding: 0px;
+    padding: 30px;
+}
+
+.container-top10{
+    height: 200px;
 }
 
 body{
@@ -18,7 +22,7 @@ body{
 
 .list{
     background-color: white;
-    width: 600px;
+    width: 800px;
     padding: 20px 15px;
     margin: auto;
     display: flex;
@@ -48,7 +52,7 @@ body{
 li{
     border: 1px solid black;
     width: 150px;
-    margin: 20px;
+    margin: 40px;
     text-align: center;
 }
 

@@ -45,7 +45,6 @@ HU-5: Calculo de Pokemons
 HU-6: Login.
 HU-7: pokemon colorido para os que consegui capturar no jogo.
 HU-8: pokemon cinza para os que não consegui capturar no jogo.
-<<<<<<< HEAD
 
 
 ## 4. Função do Projeto
@@ -54,14 +53,4 @@ HU-8: pokemon cinza para os que não consegui capturar no jogo.
 
 ## 6. Testes de Usabilidade
 
-=======
-
-
-## 4. Função do Projeto
-
-## 5. Protótipo
-
-## 6. Testes de Usabilidade
-
->>>>>>> 6e86e45b37abbfc5c9621c1fbcfe8676ae781f2d
 ## 7. Considerações

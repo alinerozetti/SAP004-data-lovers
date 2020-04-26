@@ -1,15 +1,23 @@
-import { listing, nameSearch, completeListing } from './data.js';
+import { listing, nameSearch } from './data.js';
 
-const pokemons = listing();
-const html = pokemons.map(pokemon => {
-  return `<li><img src="${pokemon.img}" alt=""> ${pokemon.id} ${pokemon.name}</li>`
-})
+document.getElementById("btn-name").addEventListener("click", buscanome);
 
-document.getElementById("list").innerHTML = html.join("");
+function renderList(pokemons) {
+  const html = pokemons.map(poke => {
+    return `<li><a href="/detail?num=${poke.num}"><img src="${poke.img}" alt=""> ${poke.num} ${poke.name}</a></li>`
+  });
+  document.getElementById("list").innerHTML = html.join("");
+}
 
+function init() {
+  const pokemons = listing();
+  renderList(pokemons)
+}
+init();
 
-// console.log(nameSearch("Ivysaur"));
-
-console.log(completeListing(1));
-
+const searchName = document.getElementById("search");
+function buscanome() {
+  const pokemonsFiltro = nameSearch(searchName.value);
+  renderList(pokemonsFiltro);
+}
 

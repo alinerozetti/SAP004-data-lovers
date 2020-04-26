@@ -45,7 +45,7 @@ body{
 
 .container-list-order{
     margin-right: 50px;
-   
+
 
 }
 
@@ -56,3 +56,12 @@ li{
     text-align: center;
 }
 
+/* esconde bloco de informações*/
+.hide{
+  display: none;
+}
+
+/* exibe bloco de informações*/
+.show{
+  display: block;
+}

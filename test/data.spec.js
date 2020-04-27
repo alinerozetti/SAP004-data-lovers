@@ -1,4 +1,5 @@
-import { example, anotherExample } from '../src/data.js';
+// import { example, anotherExample } from '../src/data.js';
+import { nameSearch } from '../src/data.js';
 
 
 describe('example', () => {

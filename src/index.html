@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>Pokemon Valle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokediary</title>
   <link rel="stylesheet" href="reset.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -28,24 +29,22 @@
       <div id="container-search-type">
         <label for="">Buscar por tipo:</label>
         <select name="select" id="select-element">
-          <option value="fire">Fogo</option>
-          <option value="water">Àgua</option>
-          <option value="leaf">Planta</option>
           
         </select>
         <button id="btn-element">Buscar</button>
       </div>
       <div class="container-search-name">
         <label for="">Buscar por nome:</label>
-        <input type="text" placeholder="Digite o nome do pokemon">
+        <input id="search" type="text" placeholder="Digite o nome do pokemon">
         <button id="btn-name">Buscar</button>
       </div>
       <div class="container-list-order">
         <label for="">Ordenar:</label>
         <select name="select" id="select-order">
-          <option value="alpha">Ordem Alfabética</option>
-          <option value="attack" selected>Ataque: Maior - Menor</option>
-          <option value="number">Ordem Númerica </option>
+          <option value="">Choose</option>
+          <option value="name">Ordem Alfabética</option>
+          <option value="weight" >Peso</option>
+          <option value="number">Numero </option>
         </select>
         <button id="btn-order">Ordenar</button>
       </div>
@@ -61,6 +60,7 @@
 
   </main>
   <div id="root"></div>
+  <footer class="footer">© By Aline & Mariana - 2020</footer>
   <script src="main.js" type="module"></script>
 </body>
 

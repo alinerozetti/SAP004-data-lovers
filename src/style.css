@@ -4,7 +4,7 @@
 }
 
 .fundo{
-    background-image: url("../img/fundo.jpg");
+    background-image: url("img/fundo.jpg");
     text-align: center;
     padding: 30px;
 }
@@ -42,6 +42,7 @@ body{
 
 .container-list-order{
     margin-right: 50px;
+
 }
 
 li{

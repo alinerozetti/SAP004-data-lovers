@@ -5,17 +5,21 @@
 }
 
 .fundo{
-<<<<<<< HEAD
     background-image: url("img/fundo.jpg");
-=======
-    background-image: url("./img/fundo.jpg");
->>>>>>> cbd45ef7339be624252e03fd454a2c55e0b91095
     text-align: center;
     padding: 30px;
 }
 
-.container-top10{
+.top{
+    display: flex;
     height: 200px;
+    width: 1000px;
+}
+
+.Top-item{
+    margin: 15px;
+    height: 130px;
+    text-align: center;
 }
 
 body{
@@ -52,10 +56,6 @@ body{
 .container-list-order{
     margin-right: 50px;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> cbd45ef7339be624252e03fd454a2c55e0b91095
 }
 
 li{

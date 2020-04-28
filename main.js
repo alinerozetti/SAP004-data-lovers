@@ -1,12 +1,12 @@
 import { listing, nameSearch, typeSearch, listingType, orderByName, orderByWeight } from './data.js';
 
-document.getElementById("btn-name").addEventListener("click", buscanome);
-document.getElementById("btn-element").addEventListener("click", buscaTipo);
-document.getElementById("btn-order").addEventListener("click", buscaOrdenar);
+document.getElementById("btn-name").addEventListener("click", searchNameFilter);
+document.getElementById("btn-element").addEventListener("click", searchTypeFilter);
+document.getElementById("btn-order").addEventListener("click", orderNameFilter);
 
 function renderList(pokemons) {
   const html = pokemons.map(poke => {
-    return `<li><a href="/detail?num=${poke.num}"><img src="${poke.img}" alt=""> ${poke.num} ${poke.name}</a></li>`
+    return `<li><a href="./detail?num=${poke.num}"><img src="${poke.img}" alt=""> ${poke.num} ${poke.name}</a></li>`
   });
   document.getElementById("list").innerHTML = html.join("");
 }
@@ -27,19 +27,19 @@ function init() {
 init();
 
 const searchName = document.getElementById("search");
-function buscanome() {
+function searchNameFilter() {
   const pokemonsFiltro = nameSearch(searchName.value);
   renderList(pokemonsFiltro);
 }
 
 const searchType = document.getElementById("select-element");
-function buscaTipo() {
+function searchTypeFilter() {
   const pokemonsFiltro = typeSearch(searchType.value);
   renderList(pokemonsFiltro);
 }
 
 const orderName = document.getElementById("select-order");
-function buscaOrdenar() {
+function orderNameFilter() {
   if (orderName.value === "name") {
     const pokemonsFiltro = orderByName();
     renderList(pokemonsFiltro);

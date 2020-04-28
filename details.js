@@ -22,7 +22,7 @@ function init() {
   }
   const html = evolutions.map(poke => {
     const evolution = getByNum(poke.num)
-    return `<li><a href="/detail?num=${poke.num}"><img src="${evolution.img}"> ${poke.name}</a></li>`
+    return `<li><a href="./detail?num=${poke.num}"><img src="${evolution.img}"> ${poke.name}</a></li>`
   });
   document.getElementById("evolution").innerHTML = html.join("");
 }

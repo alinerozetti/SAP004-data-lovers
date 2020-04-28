@@ -1,7 +1,6 @@
 *{
     box-sizing: border-box;
-    list-style: none;
-    
+    list-style: none;    
 }
 
 .fundo{
@@ -14,12 +13,9 @@
     height: 200px;
 }
 
-body{
-    background-image: linear-gradient(rgb(157, 238, 157), blue, red);
+body{   
     margin: auto;
     padding: 0px;
-    
-
 }
 
 .list{
@@ -31,14 +27,13 @@ body{
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
-
 }
 
 .container-search{
     display: flex;
     justify-content: space-between;
     margin-left: 50px;
-    padding: 10px;
+    padding: 100px;
 }
 
 .container-search-name{
@@ -47,8 +42,6 @@ body{
 
 .container-list-order{
     margin-right: 50px;
-
-
 }
 
 li{

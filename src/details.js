@@ -9,6 +9,7 @@ function init() {
   document.getElementById("imgPoke").src = namePoke.img;
   document.getElementById("type").innerHTML = namePoke.type;
   document.getElementById("weaknesses").innerHTML = namePoke.weaknesses;
+  document.getElementById("candy").innerHTML = namePoke.candy;
   document.getElementById("candy-count").innerHTML = namePoke.candy_count;
   document.getElementById("height").innerHTML = namePoke.height;
   document.getElementById("weight").innerHTML = namePoke.weight;
@@ -22,7 +23,7 @@ function init() {
   }
   const html = evolutions.map(poke => {
     const evolution = getByNum(poke.num)
-    return `<li><a href="./detail?num=${poke.num}"><img src="${evolution.img}"> ${poke.name}</a></li>`
+    return `<li><a href="./detail?num=${poke.num}"><img src="${evolution.img}"> ${poke.name} ${poke.num}</a></li>`
   });
   document.getElementById("evolution").innerHTML = html.join("");
 }

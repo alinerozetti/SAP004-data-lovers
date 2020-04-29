@@ -5,7 +5,7 @@
 }
 
 .fundo{
-    background-image: url("img/fundo.jpg");
+    background-image: url("https://images5.alphacoders.com/820/820614.png");
     text-align: center;
     padding: 30px;
 }
@@ -23,7 +23,7 @@
 }
 
 body{
-    background-image: linear-gradient(rgb(157, 238, 157), blue, red);
+    background-image: linear-gradient(rgb(59, 4, 59), violet);
     margin: auto;
     padding: 0px;
 
@@ -31,7 +31,7 @@ body{
 }
 
 .list{
-    background-color: white;
+    background-color: transparent;
     width: 1000px;
     padding: 20px 15px;
     margin: auto;
@@ -63,6 +63,12 @@ li{
     width: 150px;
     margin: 40px;
     text-align: center;
+    border-color: transparent;
+    border-radius: 10px;
+    background-color: rgb(138, 8, 138);
+    color: cornsilk;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 

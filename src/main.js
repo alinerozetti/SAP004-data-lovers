@@ -1,5 +1,6 @@
 import { listing, nameSearch, typeSearch, listingType, orderByName, orderByWeight } from './data.js';
 
+const calc= document.getElementById("statistics")
 document.getElementById("btn-name").addEventListener("click", searchNameFilter);
 document.getElementById("btn-element").addEventListener("click", searchTypeFilter);
 document.getElementById("btn-order").addEventListener("click", orderNameFilter);
@@ -29,17 +30,26 @@ init();
 const searchName = document.getElementById("search");
 function searchNameFilter() {
   const pokemonsFiltro = nameSearch(searchName.value);
+  calc.classList.remove();
+  calc.classList.add("hide");
   renderList(pokemonsFiltro);
 }
 
 const searchType = document.getElementById("select-element");
 function searchTypeFilter() {
   const pokemonsFiltro = typeSearch(searchType.value);
+  const qtdPokemon = (pokemonsFiltro.length /151)*100;
+  calc.classList.remove();
+  calc.classList.add("show");
+  calc.innerHTML = qtdPokemon.toFixed(0) + "% dos pokemons são deste tipo";
   renderList(pokemonsFiltro);
 }
 
 const orderName = document.getElementById("select-order");
 function orderNameFilter() {
+  calc.classList.remove();
+  calc.classList.add("hide");
+  
   if (orderName.value === "name") {
     const pokemonsFiltro = orderByName();
     renderList(pokemonsFiltro);

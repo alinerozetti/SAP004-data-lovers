@@ -30,7 +30,7 @@ init();
 const searchName = document.getElementById("search");
 function searchNameFilter() {
   const pokemonsFiltro = nameSearch(searchName.value);
-  calc.classList.remove();
+  calc.classList.remove("show");
   calc.classList.add("hide");
   renderList(pokemonsFiltro);
 }
@@ -39,15 +39,15 @@ const searchType = document.getElementById("select-element");
 function searchTypeFilter() {
   const pokemonsFiltro = typeSearch(searchType.value);
   const qtdPokemon = (pokemonsFiltro.length /151)*100;
-  calc.classList.remove();
+  calc.classList.remove("hide");
   calc.classList.add("show");
-  calc.innerHTML = qtdPokemon.toFixed(0) + "% dos pokemons são deste tipo";
+  calc.innerHTML = qtdPokemon.toFixed(0) + "% dos pokemons são deste tipo!";
   renderList(pokemonsFiltro);
 }
 
 const orderName = document.getElementById("select-order");
 function orderNameFilter() {
-  calc.classList.remove();
+  calc.classList.remove("show");
   calc.classList.add("hide");
   
   if (orderName.value === "name") {

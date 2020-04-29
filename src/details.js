@@ -5,7 +5,7 @@ function init() {
   const num = params.get("num");
   const namePoke = getByNum(num);
 
-  document.getElementById("name").innerHTML = namePoke.name;
+  document.getElementById("name").innerHTML = `${namePoke.name} N°${namePoke.num}`;
   document.getElementById("imgPoke").src = namePoke.img;
   document.getElementById("type").innerHTML = namePoke.type;
   document.getElementById("weaknesses").innerHTML = namePoke.weaknesses;
@@ -23,7 +23,7 @@ function init() {
   }
   const html = evolutions.map(poke => {
     const evolution = getByNum(poke.num)
-    return `<li><a href="./detail?num=${poke.num}"><img src="${evolution.img}"> ${poke.name} ${poke.num}</a></li>`
+    return `<li><a href="./detail?num=${poke.num}"><img src="${evolution.img}"> ${poke.name} N°${poke.num}</a></li>`
   });
   document.getElementById("evolution").innerHTML = html.join("");
 }

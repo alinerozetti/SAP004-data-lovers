@@ -6,7 +6,7 @@ document.getElementById("btn-order").addEventListener("click", orderNameFilter);
 
 function renderList(pokemons) {
   const html = pokemons.map(poke => {
-    return `<li><a href="./detail?num=${poke.num}"><img src="${poke.img}" alt=""> ${poke.num} ${poke.name}</a></li>`
+    return `<li><a href="./detail?num=${poke.num}"> N°${poke.num}<img src="${poke.img}" alt=""> ${poke.name}</a></li>`
   });
   document.getElementById("list").innerHTML = html.join("");
 }

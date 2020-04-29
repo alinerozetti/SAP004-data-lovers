@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokediary</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="detail.css" />
 </head>
 
 <body>
@@ -15,27 +16,34 @@
           border="0"></a></h1>
     <h2><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></h2>
   </header>
-  <h3 id="name"></h3>
-  <img id="imgPoke" />
-  <ul>
-    <label>ALTURA</label>
-    <li id="height"></li>
-    <label>PESO</label>
-    <li id="weight"></li>
-    <label>CAND</label>
-    <li id="candy"></li>
-    <label>CAND COUNT</label>
-    <li id="candy-count"></li>
-    <label>TIPO</label>
-    <li id="type"></li>
-    <label>FRAQUEZA</label>
-    <li id="weaknesses"></li>
+  <main>
+    <button class="btn-back"><a href="index.html">Voltar</a></button>
+    <h3 id="name"></h3>
+    <div class="dice-pokemon">
+      <img id="imgPoke" class="img" />
+      <ul class="dice-table">
+        <div class="dice">
+          <label>ALTURA</label>
+          <li id="height"></li>
+          <label>PESO</label>
+          <li id="weight"></li>
+          <label>CAND</label>
+          <li id="candy"></li>
+          <label>CAND COUNT</label>
+          <li id="candy-count"></li>
+        </div>
+        <div class="dice-type dice">
+          <label>TIPO</label>
+          <li id="type"></li>
+          <label>FRAQUEZA</label>
+          <li id="weaknesses"></li>
+        </div>
+      </ul>
+    </div>
+    <ul id="evolution" class="evolu"></ul>
 
+  </main>
 
-  </ul>
-  <ul id="evolution"></ul>
-
-  <button><a href="index.html">Voltar</a></button>
 
   <footer class="footer">© By Aline & Mariana - 2020</footer>
   <script src="details.js" type="module"></script>

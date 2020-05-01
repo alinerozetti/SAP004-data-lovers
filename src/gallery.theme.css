@@ -38,3 +38,14 @@
   transition: color .1s;
   padding: 10px;
 }
+
+@media only screen and (max-device-width: 600px) {
+  .gallery .item{
+    padding: 5px;
+  }
+  .controls{
+   font-size: 10px;
+   top: 140px;
+  }
+  
+}

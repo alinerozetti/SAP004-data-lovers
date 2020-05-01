@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="gallery.theme.css">
   <link rel="stylesheet" href="gallery.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  
 </head>
 
 <body>
@@ -55,17 +56,17 @@
     
   <main>
     <section class="container-search">
-      <div id="container-search-type">
+      <div class="container-search-type">
         <label for="">Search for Type:</label>
         <select name="select" id="select-element">
           
         </select>
-        <button id="btn-element">Search</button>
+        <button class="btn btn-outline-primary" id="btn-element">Search</button>
       </div>
       <div class="container-search-name">
         <label for="">Search name:</label>
         <input id="search" type="text" placeholder="Digite o nome do pokemon">
-        <button id="btn-name">Search</button>
+        <button class="btn btn-outline-primary" id="btn-name">Search</button>
       </div>
       <div class="container-list-order">
         <label for="">Order:</label>
@@ -75,12 +76,13 @@
           <option value="weight" >Weight</option>
           <option value="number">Number </option>
         </select>
-        <button id="btn-order">Order</button>
+        <button class="btn btn-outline-primary" id="btn-order">Order</button>
+        
       </div>
     </section>
 
     <section id="container-list">
-      <div>
+      <div class="text  ">
         <p class="hide" id="statistics"></p>
         <ul id="list" class="list">
 

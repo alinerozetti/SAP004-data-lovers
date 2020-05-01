@@ -53,9 +53,8 @@ export const getById = (pokemonId) => {
 
 export const typeSearch = (typePokemon) => {
   const typeSearchPokemons = listing().filter(poke => {
-    for (const tipo of poke.type) {
-      return tipo === typePokemon;
-    }
+     
+      return poke.type[0] === typePokemon|| poke.type[1]===typePokemon;
   });
   return typeSearchPokemons;
 };

@@ -29,6 +29,12 @@
 .show{
     display: block
     }
+.sub-title{
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    padding-top: 20px;
+}
 
 .text{
     text-align: center;
@@ -71,8 +77,16 @@ body{
     margin-right: 50px;  
 }
 
+select{
+    height: 22px;
+}
+
 .container-search-name{
     margin-right: 50px;
+}
+
+input{
+    width: 180px;
 }
 
 .container-list-order{

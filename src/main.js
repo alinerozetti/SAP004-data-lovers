@@ -42,6 +42,7 @@ function searchTypeFilter() {
   calc.classList.remove("hide");
   calc.classList.add("show");
   calc.innerHTML = qtdPokemon.toFixed(0) + "% dos pokemons são deste tipo!";
+  document.getElementById ("select-element").value= "";
   renderList(pokemonsFiltro);
 }
 
@@ -52,14 +53,17 @@ function orderNameFilter() {
   
   if (orderName.value === "name") {
     const pokemonsFiltro = orderByName();
+    orderName.value=""
     renderList(pokemonsFiltro);
   }
   if (orderName.value === "number") {
     const pokemonsFiltro = listing();
+    orderName.value=""
     renderList(pokemonsFiltro);
   }
   if (orderName.value === "weight") {
     const pokemonsFiltro = orderByWeight();
+    orderName.value=""
     renderList(pokemonsFiltro);
   }
 }

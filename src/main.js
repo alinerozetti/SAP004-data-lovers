@@ -32,6 +32,7 @@ function searchNameFilter() {
   const pokemonsFiltro = nameSearch(searchName.value);
   calc.classList.remove("show");
   calc.classList.add("hide");
+  searchName.value=""
   renderList(pokemonsFiltro);
 }
 

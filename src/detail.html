@@ -10,38 +10,65 @@
 </head>
 
 <body>
-  <header class="fundo">
-    <h1><a href="https://fontmeme.com/pt/fonte-de-pokemon-go/"><img
-          src="https://fontmeme.com/permalink/200424/e2746fe85fdaab09123fdca6b916bb9c.png" alt="fonte-de-pokemon-go"
-          border="0"></a></h1>
+  <header id="gif" class="fundo">
+    <h1><a><img src="https://fontmeme.com/permalink/200429/65da7acdb7f16431618ddbf607e03edc.png"
+          alt="fonte-de-pokemon-go" border="0"></a>
+    </h1>
     <h2><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></h2>
   </header>
   <main>
-    <a href="index.html"><button class="btn-back">Voltar</button></a>
-    <h3 id="name"></h3>
+    <div class="btn-button">
+      <button class="btn-back"><a href="index.html">Voltar</a></button>
+    </div>
+    <!-- fazer fundo? -->
+    <h3 id="name" class="name-pokemon"></h3>
+    <!-- colocar icone de seta indicando lado -->
+    <div class="next-prev">
+      <a id="previous" class="next-previous"></a>
+      <a id="next" class="next-previous"><span></span></a>
+    </div>
     <div class="dice-pokemon">
-      <img id="imgPoke" class="img" />
+      <div>
+        <img id="imgPoke" class="img" />
+        <ul>
+          <div class="dice-type">
+            <label>TIPO</label>
+            <li id="type"></li>
+            <label>FRAQUEZA</label>
+            <li id="weaknesses"></li>
+          </div>
+        </ul>
+      </div>
+
       <ul class="dice-table">
         <div class="dice">
           <label>ALTURA</label>
           <li id="height"></li>
           <label>PESO</label>
           <li id="weight"></li>
-          <label>CAND</label>
+          <label>CANDY</label>
           <li id="candy"></li>
-          <label>CAND COUNT</label>
+          <label>CANDY COUNT</label>
           <li id="candy-count"></li>
+          <label>Ovos</label>
+          <li id="egg"></li>
+          <label>CHANCE DE APARECER</label>
+          <li id="spawn_chance"></li>
+          <label>MÉDIA</label>
+          <li id="avg_spawns"></li>
+          <label>TEMPO DE DESOVA</label>
+          <li id="spawn_time"></li>
+          <label>MULTIPLICADORES</label>
+          <li id="multipliers"></li>
         </div>
-        <div class="dice-type dice">
-          <label>TIPO</label>
-          <li id="type"></li>
-          <label>FRAQUEZA</label>
-          <li id="weaknesses"></li>
-        </div>
+
       </ul>
     </div>
     <ul id="evolution" class="evolu"></ul>
 
+    <div class="btn-end">
+      <button class="btn-explore"><a href="index.html">Explorar Mais Pokemons</a></button>
+    </div>
   </main>
 
 

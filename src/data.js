@@ -33,7 +33,7 @@ export const orderByWeight = () => {
 
 export const nameSearch = (namePokemon) => {
   const nameSearchPokemons = listing().filter(poke => {
-    return poke.name.toUpperCase() === namePokemon.toUpperCase();
+    return poke.name.toUpperCase().indexOf(namePokemon.toUpperCase()) !== -1
   });
   return nameSearchPokemons;
 };
@@ -41,6 +41,12 @@ export const nameSearch = (namePokemon) => {
 export const getByNum = (pokemonNum) => {
   const pokemon = data.pokemon.find(poke => {
     return poke.num === pokemonNum
+  })
+  return pokemon;
+}
+export const getById = (pokemonId) => {
+  const pokemon = data.pokemon.find(poke => {
+    return poke.id === pokemonId
   })
   return pokemon;
 }

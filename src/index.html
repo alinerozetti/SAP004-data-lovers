@@ -63,12 +63,12 @@
         <select name="select" id="select-element">
           
         </select>
-        <button class="btn btn-outline-primary" id="btn-element">Search</button>
+        <button class="btn-header" id="btn-element">Search</button>
       </div>
       <div class="container-search-name">
         <label for="">Search name:</label>
         <input id="search" type="text" placeholder="Digite o nome do pokemon">
-        <button class="btn btn-outline-primary" id="btn-name">Search</button>
+        <button class="btn-header" id="btn-name">Search</button>
       </div>
       <div class="container-list-order">
         <label for="">Order:</label>
@@ -78,17 +78,19 @@
           <option value="weight" >Weight</option>
           <option value="number">Number </option>
         </select>
-        <button class="btn btn-outline-primary" id="btn-order">Order</button>
+        <button class="btn-header" id="btn-order">Order</button>
         
       </div>
     </section>
 
     <section id="container-list">
-      <div class="text  ">
+      <div class="text">
         <p class="hide" id="statistics"></p>
         <ul id="list" class="list">
 
         </ul>
+        <button id="loadMore" class="show btn-load-more">Carregar Mais</button>
+        <button id="loadAll" class="hide btn-load-more">Carregar Tudo</button>
       </div>
     </section>
 

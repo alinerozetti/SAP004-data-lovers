@@ -14,14 +14,15 @@
     }
     
 .show{
-    display: block
+    display: inline-block
     }
 
 .sub-title{
     text-align: center;
     font-size: 40px;
-    color: white;
+    color: rgb(214, 64, 169);
     padding-top: 20px;
+    font-weight: bold;
 }
 
 .text{
@@ -73,6 +74,21 @@ select{
 input{
     width: 180px;
 }
+.btn-header{
+    width: 70px;
+    height: 30px;
+    background-color:  rgb(52, 213, 235);
+    border-radius: 10px;
+    font-size: 14px;
+    color: rgb(86, 26, 136);
+    font-weight: bold;
+    cursor: pointer;
+    transition: ease-in 0.3s;
+}
+.btn-header:hover{
+    font-size: 17px;
+
+}
 
 
 li{
@@ -90,6 +106,20 @@ li{
 
 li:hover{
     opacity: 0.5;  
+}
+.btn-load-more{
+    width: 200px;
+    height: 40px;
+    background-color:  rgb(52, 213, 235);
+    border-radius: 10px;
+    font-size: 20px;
+    color: rgb(86, 26, 136);
+    font-weight: bold;
+    cursor: pointer;
+    transition: ease-in 0.3s;
+}
+.btn-load-more:hover{
+    font-size: 25px;
 }
 @media only screen and (max-device-width: 1050px){
     .list{
@@ -146,6 +176,7 @@ li:hover{
         margin-bottom: 20px; 
         width: 100%;
     }
+
 
 }
 

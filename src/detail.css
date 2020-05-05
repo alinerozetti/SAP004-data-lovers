@@ -77,20 +77,23 @@ body{
   width: 300px;
   height: 300px;
   margin-top: 120px;
-
 }
 
 .dice-type{
-  background-color:rgb(138, 8, 138);
+  color: cornsilk;
   display: flex;
   flex-flow: column;
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
-.type-style{
-  display: flex;
-  align-content: space-between;
+.dice-fraq{
+  background-color: rgb(138, 8, 138);
+  box-shadow: 9px 7px 5px rgba(50,50,50,0.77);
+  padding: 0 70px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 20px;
 }
 
 .dice-table{
@@ -129,6 +132,7 @@ body{
   font-size: 20px;
 
 }
+
 .evolu li:hover{
   opacity: 0.5;
 }
@@ -153,7 +157,6 @@ body{
     font-size: 17px;
 }
 
-
 footer {
   background: #f8fafb8e;
   width: 100%;
@@ -161,6 +164,4 @@ footer {
   box-sizing: border-box;
   text-align: center;
 }
-
-
 

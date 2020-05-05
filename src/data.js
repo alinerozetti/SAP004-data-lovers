@@ -33,7 +33,7 @@ export const orderByWeight = () => {
 
 export const nameSearch = (namePokemon) => {
   const nameSearchPokemons = listing().filter(poke => {
-    return poke.name.toUpperCase().indexOf(namePokemon.toUpperCase()) === 0;
+    return poke.name.toUpperCase().indexOf(namePokemon.toUpperCase()) !== -1
   });
   return nameSearchPokemons;
 };
@@ -53,8 +53,8 @@ export const getById = (pokemonId) => {
 
 export const typeSearch = (typePokemon) => {
   const typeSearchPokemons = listing().filter(poke => {
-
-    return poke.type[0] === typePokemon || poke.type[1] === typePokemon;
+     
+      return poke.type[0] === typePokemon|| poke.type[1]===typePokemon;
   });
   return typeSearchPokemons;
 };

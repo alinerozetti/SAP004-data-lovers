@@ -35,6 +35,8 @@ function renderList(pokemons, qtd) {
     document.getElementById("list").innerHTML = html.join("");
   }
   else {
+    loadMore.classList.remove("show");
+    loadMore.classList.add("hide");
     loadAll.classList.remove("show");
     loadAll.classList.add("hide");
     const html = pokemons.map(poke => {
@@ -64,7 +66,7 @@ function searchNameFilter() {
   const pokemonsFiltro = nameSearch(searchName.value);
   calc.classList.remove("show");
   calc.classList.add("hide");
-  searchName.value = ""
+  searchName.value = "";
   renderList(pokemonsFiltro, 0);
 }
 

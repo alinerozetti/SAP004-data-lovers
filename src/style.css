@@ -178,6 +178,13 @@ li:hover{
     }
 }
 
+footer {
+  background: #f8fafb8e;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
 
 
 

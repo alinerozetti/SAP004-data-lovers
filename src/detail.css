@@ -20,31 +20,14 @@ body{
   height: 130px;
   text-align: center;
 }
-.btn-button{
-  display: flex;
-  justify-content: flex-end;
-}
 
-.btn-back{
-  background-color: rgba(138, 8, 138, 0.541);
-  color: cornsilk;
-  width: 100px;
-  border-radius: 6px;
-  font-size: 18px;
-  text-align: center;
-  font-weight: bold;
-  font-family:"Flexo-Medium",arial,sans-serif;
-  border-radius: 6px;
-  background-color: #add8e6;
-  font-size: 18px;
-
-}
 
 .name-pokemon{
   color: cornsilk;
   font-size: 50px ;
   font-style:italic;
   font-family: "Flexo-Medium",arial,sans-serif;
+  margin-top: 50px;
   margin-bottom: 0;
   text-align: center;
 }
@@ -52,24 +35,24 @@ body{
 .next-prev{
   display: flex;
   justify-content: space-between ;
-
 }
 
 
 .next-previous{
-  padding: 10px;
-  margin: 40px;
-  text-align: center;
-  border-color: transparent;
-  border-radius:10px;
   background-color: rgb(138, 8, 138);
   color: cornsilk;
+  padding: 10px;
+  margin: 40px;
+  border-radius:10px;
   font-size: 30px;
+  text-align: center;
+  border-color: transparent;
   font-family: "Flexo-Medium",arial,sans-serif;
 }
 
 .next-previous:hover{
   opacity: 0.5;
+  font-size: 35px;
 }
 
 .dice-pokemon{
@@ -89,10 +72,12 @@ body{
 
 .img{
   background-color: rgb(138, 8, 138);
+  box-shadow: 9px 7px 5px rgba(50,50,50,0.77);
   border-radius: 6px;
   width: 300px;
   height: 300px;
   margin-top: 120px;
+
 }
 
 .dice-type{
@@ -101,6 +86,11 @@ body{
   flex-flow: column;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.type-style{
+  display: flex;
+  align-content: space-between;
 }
 
 .dice-table{
@@ -130,12 +120,14 @@ body{
 }
 
 .evolu li{
+  background-color: rgb(138, 8, 138);
+  box-shadow: 9px 7px 5px rgba(50,50,50,0.77);
   color: cornsilk;
   padding: 0 70px;
   border-radius: 10px;
-  width: 190px;
   margin: 40px;
   font-size: 20px;
+
 }
 .evolu li:hover{
   opacity: 0.5;
@@ -147,16 +139,28 @@ body{
   margin-bottom: 100px;
 }
 
+.btn-explore{
+  background-color:  rgb(52, 213, 235);
+  color: rgb(86, 26, 136);
+  width: 300px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+
+}
+
+.btn-explore:hover{
+    font-size: 17px;
+}
+
+
 footer {
+  background: #f8fafb8e;
   width: 100%;
   padding: 10px 20px;
-  background: #f8fafb;
   box-sizing: border-box;
   text-align: center;
 }
 
 
-.type-style{
-  display: flex;
-  align-content: space-between;
-}
+

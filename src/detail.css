@@ -37,7 +37,7 @@ body{
   border-radius: 6px;
   background-color: #add8e6;
   font-size: 18px;
-  
+
 }
 
 .name-pokemon{
@@ -55,6 +55,7 @@ body{
 
 }
 
+
 .next-previous{
   padding: 10px;
   margin: 40px;
@@ -65,6 +66,10 @@ body{
   color: cornsilk;
   font-size: 30px;
   font-family: "Flexo-Medium",arial,sans-serif;
+}
+
+.next-previous:hover{
+  opacity: 0.5;
 }
 
 .dice-pokemon{
@@ -132,6 +137,10 @@ body{
   margin: 40px;
   font-size: 20px;
 }
+.evolu li:hover{
+  opacity: 0.5;
+}
+
 .btn-end{
   display: flex;
   justify-content: center;
@@ -147,3 +156,7 @@ footer {
 }
 
 
+.type-style{
+  display: flex;
+  align-content: space-between;
+}

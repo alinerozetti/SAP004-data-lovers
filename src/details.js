@@ -43,14 +43,22 @@ function evolutionPokemon(pokemon) {
 }
 
 function nextPokemon(pokemon) {
-  const next = getById(pokemon.id + 1)
+  let pokemonId = pokemon.id + 1;
+  if (pokemonId === 152) {
+    pokemonId = 1
+  }
+  const next = getById(pokemonId)
   const nextId = document.getElementById("next")
   nextId.innerHTML = `${next.name} N°${next.num}`
   nextId.href = `./detail?num=${next.num}`
 }
 
 function previousPokemon(pokemon) {
-  const previous = getById(pokemon.id - 1)
+  let pokemonId = pokemon.id - 1;
+  if (pokemonId === 0) {
+    pokemonId = 151
+  }
+  const previous = getById(pokemonId)
   const previousId = document.getElementById("previous")
   previousId.innerHTML = `${previous.name} N°${previous.num}`
   previousId.href = `./detail?num=${previous.num}`

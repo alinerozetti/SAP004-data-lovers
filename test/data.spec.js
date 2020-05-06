@@ -25,6 +25,11 @@ describe('pokemon', () => {
   //   expect(parseFloat(weightOrder[0].weight) > parseFloat(weightOrder[1].weight)).toBe(true);
   // });
 
+  /*it('quando pesquisar o pokemon pelo nome ira aparecer o pokemon', () => {
+    expect(nameSearch()[0].name).toBe("Bulbasaur");
+    expect(nameSearch()[150].name).toBe("Mew");
+  });*/
+
 
 
 });

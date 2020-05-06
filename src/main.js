@@ -54,7 +54,7 @@ function renderType(types) {
   const html = types.map(type => {
     return `<option value="${type}">${type}</option>`
   });
-  document.getElementById("select-element").innerHTML = `<option value="">Choose</option>` + html.join("");
+  document.getElementById("select-element").innerHTML = `<option value="">Selecionar</option>` + html.join("");
 }
 
 function init() {

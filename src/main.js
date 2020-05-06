@@ -1,12 +1,16 @@
+import data from './data/pokemon/pokemon.js';
 import { listing, nameSearch, typeSearch, listingType, orderByName, orderByWeight } from './data.js';
+
+
+const dataPokemon = data.pokemon;
 const loadMore = document.getElementById("loadMore");
 const loadAll = document.getElementById("loadAll");
 const calc = document.getElementById("statistics")
 document.getElementById("btn-name").addEventListener("click", searchNameFilter);
 document.getElementById("btn-element").addEventListener("click", searchTypeFilter);
 document.getElementById("btn-order").addEventListener("click", orderNameFilter);
-loadMore.addEventListener("click", function () { renderList(listing(), 40) });
-loadAll.addEventListener("click", function () { renderList(listing(), 0) });
+loadMore.addEventListener("click", function () { renderList(listing(dataPokemon), 40) });
+loadAll.addEventListener("click", function () { renderList(listing(dataPokemon), 0) });
 
 
 function renderList(pokemons, qtd) {
@@ -54,8 +58,8 @@ function renderType(types) {
 }
 
 function init() {
-  const pokemons = listing();
-  const types = listingType();
+  const pokemons = listing(dataPokemon);
+  const types = listingType(dataPokemon);
   renderList(pokemons, 20)
   renderType(types)
 }
@@ -63,7 +67,7 @@ init();
 
 const searchName = document.getElementById("search");
 function searchNameFilter() {
-  const pokemonsFiltro = nameSearch(searchName.value);
+  const pokemonsFiltro = nameSearch(dataPokemon, searchName.value);
   calc.classList.remove("show");
   calc.classList.add("hide");
   searchName.value = "";
@@ -72,7 +76,7 @@ function searchNameFilter() {
 
 const searchType = document.getElementById("select-element");
 function searchTypeFilter() {
-  const pokemonsFiltro = typeSearch(searchType.value);
+  const pokemonsFiltro = typeSearch(dataPokemon, searchType.value);
   const qtdPokemon = (pokemonsFiltro.length / 151) * 100;
   calc.classList.remove("hide");
   calc.classList.add("show");
@@ -87,17 +91,17 @@ function orderNameFilter() {
   calc.classList.add("hide");
 
   if (orderName.value === "name") {
-    const pokemonsFiltro = orderByName();
+    const pokemonsFiltro = orderByName(dataPokemon);
     orderName.value = ""
     renderList(pokemonsFiltro, 0);
   }
   if (orderName.value === "number") {
-    const pokemonsFiltro = listing();
+    const pokemonsFiltro = listing(dataPokemon);
     orderName.value = ""
     renderList(pokemonsFiltro, 0);
   }
   if (orderName.value === "weight") {
-    const pokemonsFiltro = orderByWeight();
+    const pokemonsFiltro = orderByWeight(dataPokemon);
     orderName.value = ""
     renderList(pokemonsFiltro, 0);
   }

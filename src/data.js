@@ -1,7 +1,5 @@
-import data from './data/pokemon/pokemon.js';
-
-export const listing = () => {
-  const pokemons = data.pokemon.map(poke => {
+export const listing = (dataPokemon) => {
+  const pokemons = dataPokemon.map(poke => {
     return {
       img: poke.img,
       name: poke.name,
@@ -14,45 +12,46 @@ export const listing = () => {
   return pokemons;
 };
 
-export const listingType = () => {
-  const pokemon = data.pokemon;
+export const listingType = (dataPokemon) => {
+  const pokemon = dataPokemon;
   const types = pokemon.reduce(function (prev, curr) {
     return [...prev, ...curr.type];
   }, []);
-  return [...new Set(types)];
+  const newSet = new Set(types);
+  return [...newSet]
 };
 
-export const orderByName = () => {
-  return listing().sort((a, b) => a.name > b.name ? 1 : -1);
+export const orderByName = (dataPokemon) => {
+  return listing(dataPokemon).sort((a, b) => a.name > b.name ? 1 : -1);
 };
 
-export const orderByWeight = () => {
-  return listing().sort((a, b) =>
+export const orderByWeight = (dataPokemon) => {
+  return listing(dataPokemon).sort((a, b) =>
     parseFloat(a.weight.substring(0, a.weight.length - 3)) > parseFloat(b.weight.substring(0, b.weight.length - 3)) ? 1 : -1);
 };
 
-export const nameSearch = (namePokemon) => {
-  const nameSearchPokemons = listing().filter(poke => {
+export const nameSearch = (dataPokemon, namePokemon) => {
+  const nameSearchPokemons = listing(dataPokemon).filter(poke => {
     return poke.name.toUpperCase().indexOf(namePokemon.toUpperCase()) === 0;
   });
   return nameSearchPokemons;
 };
 
-export const getByNum = (pokemonNum) => {
-  const pokemon = data.pokemon.find(poke => {
+export const getByNum = (dataPokemon, pokemonNum) => {
+  const pokemon = dataPokemon.find(poke => {
     return poke.num === pokemonNum
   })
   return pokemon;
 }
-export const getById = (pokemonId) => {
-  const pokemon = data.pokemon.find(poke => {
+export const getById = (dataPokemon, pokemonId) => {
+  const pokemon = dataPokemon.find(poke => {
     return poke.id === pokemonId
   })
   return pokemon;
 }
 
-export const typeSearch = (typePokemon) => {
-  const typeSearchPokemons = listing().filter(poke => {
+export const typeSearch = (dataPokemon, typePokemon) => {
+  const typeSearchPokemons = listing(dataPokemon).filter(poke => {
 
     return poke.type[0] === typePokemon || poke.type[1] === typePokemon;
   });

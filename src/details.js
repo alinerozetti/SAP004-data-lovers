@@ -1,9 +1,12 @@
+import data from './data/pokemon/pokemon.js';
 import { getByNum, getById } from './data.js';
+
+const dataPokemon = data.pokemon
 
 function init() {
   const params = new URLSearchParams(window.location.search);
   const num = params.get("num");
-  const pokemon = getByNum(num);
+  const pokemon = getByNum(dataPokemon, num);
   dicePokemon(pokemon);
   evolutionPokemon(pokemon);
   nextPokemon(pokemon);
@@ -36,7 +39,7 @@ function evolutionPokemon(pokemon) {
     evolutions = [...evolutions, ...pokemon.next_evolution]
   }
   const html = evolutions.map(poke => {
-    const evolution = getByNum(poke.num)
+    const evolution = getByNum(dataPokemon, poke.num)
     return `<li><a href="./detail?num=${poke.num}"><img src="${evolution.img}"> </br>${poke.name} N°${poke.num}</a></li>`
   });
   document.getElementById("evolution").innerHTML = html.join("");
@@ -47,7 +50,7 @@ function nextPokemon(pokemon) {
   if (pokemonId === 152) {
     pokemonId = 1
   }
-  const next = getById(pokemonId)
+  const next = getById(dataPokemon, pokemonId)
   const nextId = document.getElementById("next")
   nextId.innerHTML = `${next.name} N°${next.num}`
   nextId.href = `./detail?num=${next.num}`
@@ -58,7 +61,7 @@ function previousPokemon(pokemon) {
   if (pokemonId === 0) {
     pokemonId = 151
   }
-  const previous = getById(pokemonId)
+  const previous = getById(dataPokemon, pokemonId)
   const previousId = document.getElementById("previous")
   previousId.innerHTML = `${previous.name} N°${previous.num}`
   previousId.href = `./detail?num=${previous.num}`

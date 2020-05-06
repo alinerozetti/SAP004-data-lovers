@@ -1,5 +1,5 @@
 // import { example, anotherExample } from '../src/data.js';
-import { typeSearch, listing, orderByName, orderByWeight } from '../src/data.js';
+import { typeSearch, listing, orderByName } from '../src/data.js';
 
 
 describe('pokemon', () => {

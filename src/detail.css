@@ -115,8 +115,12 @@ body{
   font-size: 20px;
 }
 
-.data-flex label{
-
+.data-flex li{
+display:flex;
+justify-content: space-between;
+align-items: flex-start;
+padding: 8px;
+width: 500px;
 }
 
 .data-flex li:nth-child(even) {

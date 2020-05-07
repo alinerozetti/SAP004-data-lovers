@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokediary</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   <link rel="stylesheet" href="reset.css" />
   <link rel="stylesheet" href="detail.css" />
 </head>
@@ -17,27 +19,23 @@
     <h2><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></h2>
   </header>
   <main>
-    <!-- fazer fundo? -->
     <h3 id="name" class="name-pokemon"></h3>
-    <!-- colocar icone de seta indicando lado -->
     <div class="next-prev">
       <a id="previous" class="next-previous"></a>
       <a id="next" class="next-previous"><span></span></a>
     </div>
-    <div class="dice-pokemon">
+    <div class="data-pokemon">
       <div>
         <img id="imgPoke" class="img" />
-        <ul>
-          <div class="dice-type">
-            <label>TIPO</label>
-            <li id="type"></li>
-          </div>
-        </ul>
+        <div class="data-type">
+          <label>TIPO</label>
+          <ul id="type"></ul>
+        </div>
       </div>
 
-      <ul class="dice-table">
-        <div class="dice">
-          <div class="dice-height">
+      <ul class="data-table">
+        <div class="data">
+          <div class="data-height">
             <label>ALTURA</label>
             <li id="height"></li>
           </div>
@@ -65,6 +63,7 @@
 
       </ul>
     </div>
+
     <ul id="evolution" class="evolu"></ul>
 
     <div class="btn-end">

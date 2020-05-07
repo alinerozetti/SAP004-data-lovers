@@ -53,10 +53,9 @@ body{
 
 .next-previous:hover{
   opacity: 0.5;
-  font-size: 35px;
 }
 
-.dice-pokemon{
+.data-pokemon{
   color: #191970;
   font-size: 25px ;
   font-style:italic;
@@ -67,7 +66,7 @@ body{
   justify-content: center;
 }
 
-.dice-pokemon ul{
+.data-pokemon ul{
   padding: 0 70px;
 }
 
@@ -80,7 +79,7 @@ body{
   margin-top: 120px;
 }
 
-.dice-type{
+.data-type{
   color: cornsilk;
   display: flex;
   flex-flow: column;
@@ -88,7 +87,7 @@ body{
   margin-bottom: 50px;
 }
 
-.dice-type li {
+.data-type li {
   background-color: rgb(138, 8, 138);
   box-shadow: 9px 7px 5px rgba(50,50,50,0.77);
   padding: 0 70px;
@@ -101,19 +100,17 @@ body{
   margin-top: 50px;
 }
 
-.dice{
+.data{
   background-color: rgb(138, 8, 138);
   box-shadow: 9px 7px 5px rgba(50,50,50,0.77);
   padding: 0 100px;
   border-radius: 10px;
   margin-top: 70px;
 }
-.dice label{
+.data label{
   color: cornsilk;
 }
-.dice-height{
 
-}
 
 .evolu{
   display: flex;
@@ -128,7 +125,8 @@ body{
   background-color: rgb(138, 8, 138);
   box-shadow: 9px 7px 5px rgba(50,50,50,0.77);
   color: cornsilk;
-  padding: 0 70px;
+  width: 150px;
+  padding:20px;
   border-radius: 10px;
   margin: 40px;
   font-size: 20px;
@@ -152,7 +150,6 @@ body{
   border-radius: 10px;
   font-size: 14px;
   font-weight: bold;
-
 }
 
 .btn-explore:hover{

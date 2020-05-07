@@ -34,7 +34,7 @@ function renderList(pokemons, qtd) {
       newList[index] = pokemons[index];
     }
     const html = newList.map(poke => {
-      return `<li><a href="./detail?num=${poke.num}"> N°${poke.num}<img src="${poke.img}" alt=""> ${poke.name}</a></li>`
+      return `<li><a href="./detail?num=${poke.num}"> N°${poke.num}<img src="${poke.img}"> ${poke.name}</a></li>`
     });
     document.getElementById("list").innerHTML = html.join("");
   }
@@ -44,7 +44,7 @@ function renderList(pokemons, qtd) {
     loadAll.classList.remove("show");
     loadAll.classList.add("hide");
     const html = pokemons.map(poke => {
-      return `<li><a href="./detail?num=${poke.num}"> N°${poke.num}<img src="${poke.img}" alt=""> ${poke.name}</a></li>`
+      return `<li><a href="./detail?num=${poke.num}"> N°${poke.num}<img src="${poke.img}"> ${poke.name}</a></li>`
     });
     document.getElementById("list").innerHTML = html.join("");
   }

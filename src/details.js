@@ -7,14 +7,14 @@ function init() {
   const params = new URLSearchParams(window.location.search);
   const num = params.get("num");
   const pokemon = getByNum(dataPokemon, num);
-  dicePokemon(pokemon);
+  dataPoke(pokemon);
   evolutionPokemon(pokemon);
   nextPokemon(pokemon);
   previousPokemon(pokemon);
 }
 init();
 
-function dicePokemon(pokemon) {
+function dataPoke(pokemon) {
   document.getElementById("name").innerHTML = `${pokemon.name} N°${pokemon.num}`;
   document.getElementById("imgPoke").src = pokemon.img;
   document.getElementById("weaknesses").innerHTML = pokemon.weaknesses.join(" / ");

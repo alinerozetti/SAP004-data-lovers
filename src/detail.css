@@ -96,21 +96,36 @@ body{
   font-size: 20px;
 }
 
-.dice-table{
-  margin-top: 50px;
-}
-
 .data{
   background-color: rgb(138, 8, 138);
   box-shadow: 9px 7px 5px rgba(50,50,50,0.77);
-  padding: 0 100px;
-  border-radius: 10px;
-  margin-top: 70px;
-}
-.data label{
   color: cornsilk;
+  border-radius: 10px;
+  margin-top: 120px;
+  margin-bottom: 50px;
+}
+.data h3{
+  font-size: 30px;
+  margin-top: 20px;
 }
 
+.data-flex{
+  display: flex;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.data-flex label{
+
+}
+
+.data-flex li:nth-child(even) {
+  background:rgba(54, 22, 54, 0.616);
+}
+
+.data-flex li:nth-child(odd) {
+  background:rgba(100, 25, 100, 0.561);
+}
 
 .evolu{
   display: flex;
@@ -130,7 +145,6 @@ body{
   border-radius: 10px;
   margin: 40px;
   font-size: 20px;
-
 }
 
 .evolu li:hover{

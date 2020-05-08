@@ -78,6 +78,7 @@ body{
   width: 300px;
   height: 300px;
   margin-top: 120px;
+  padding: 20px 0;
 }
 
 .data-type{
@@ -104,6 +105,7 @@ body{
   border-radius: 10px;
   margin-top: 120px;
   margin-bottom: 50px;
+  margin-left: 30px;
 }
 .data h3{
   font-size: 30px;

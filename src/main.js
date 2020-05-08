@@ -90,8 +90,13 @@ function orderNameFilter() {
   calc.classList.remove("show");
   calc.classList.add("hide");
 
-  if (orderName.value === "name") {
+  if (orderName.value === "name-asc") {
     const pokemonsFiltro = orderByName(dataPokemon);
+    orderName.value = ""
+    renderList(pokemonsFiltro, 0);
+  }
+  if(orderName.value === "name-des") {
+    const pokemonsFiltro = orderByName(dataPokemon).reverse();
     orderName.value = ""
     renderList(pokemonsFiltro, 0);
   }

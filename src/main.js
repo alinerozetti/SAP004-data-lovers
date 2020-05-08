@@ -5,7 +5,11 @@ import { listing, nameSearch, typeSearch, listingType, orderByName, orderByWeigh
 const dataPokemon = data.pokemon;
 const loadMore = document.getElementById("loadMore");
 const loadAll = document.getElementById("loadAll");
-const calc = document.getElementById("statistics")
+const calc = document.getElementById("statistics");
+const searchName = document.getElementById("search");
+const searchType = document.getElementById("select-element");
+const orderName = document.getElementById("select-order");
+
 document.getElementById("btn-name").addEventListener("click", searchNameFilter);
 document.getElementById("btn-element").addEventListener("click", searchTypeFilter);
 document.getElementById("btn-order").addEventListener("click", orderNameFilter);
@@ -60,12 +64,11 @@ function renderType(types) {
 function init() {
   const pokemons = listing(dataPokemon);
   const types = listingType(dataPokemon);
-  renderList(pokemons, 20)
-  renderType(types)
+  renderList(pokemons, 20);
+  renderType(types);
 }
 init();
 
-const searchName = document.getElementById("search");
 function searchNameFilter() {
   const pokemonsFiltro = nameSearch(dataPokemon, searchName.value);
   calc.classList.remove("show");
@@ -74,7 +77,6 @@ function searchNameFilter() {
   renderList(pokemonsFiltro, 0);
 }
 
-const searchType = document.getElementById("select-element");
 function searchTypeFilter() {
   const pokemonsFiltro = typeSearch(dataPokemon, searchType.value);
   const qtdPokemon = (pokemonsFiltro.length / 151) * 100;
@@ -85,7 +87,6 @@ function searchTypeFilter() {
   renderList(pokemonsFiltro, 0);
 }
 
-const orderName = document.getElementById("select-order");
 function orderNameFilter() {
   calc.classList.remove("show");
   calc.classList.add("hide");
@@ -95,17 +96,17 @@ function orderNameFilter() {
     orderName.value = ""
     renderList(pokemonsFiltro, 0);
   }
-  if(orderName.value === "name-des") {
+  else if(orderName.value === "name-des") {
     const pokemonsFiltro = orderByName(dataPokemon).reverse();
     orderName.value = ""
     renderList(pokemonsFiltro, 0);
   }
-  if (orderName.value === "number") {
+  else if (orderName.value === "number") {
     const pokemonsFiltro = listing(dataPokemon);
     orderName.value = ""
     renderList(pokemonsFiltro, 0);
   }
-  if (orderName.value === "weight") {
+  else if (orderName.value === "weight") {
     const pokemonsFiltro = orderByWeight(dataPokemon);
     orderName.value = ""
     renderList(pokemonsFiltro, 0);

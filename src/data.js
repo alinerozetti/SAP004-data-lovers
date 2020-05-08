@@ -8,7 +8,7 @@ export const listing = (dataPokemon) => {
       type: poke.type,
       weight: poke.weight
     }
-  })
+  });
   return pokemons;
 };
 
@@ -18,7 +18,7 @@ export const listingType = (dataPokemon) => {
     return [...prev, ...curr.type];
   }, []);
   const newSet = new Set(types);
-  return [...newSet]
+  return [...newSet];
 };
 
 export const orderByName = (dataPokemon) => {
@@ -39,16 +39,17 @@ export const nameSearch = (dataPokemon, namePokemon) => {
 
 export const getByNum = (dataPokemon, pokemonNum) => {
   const pokemon = dataPokemon.find(poke => {
-    return poke.num === pokemonNum
-  })
+    return poke.num === pokemonNum;
+  });
   return pokemon;
-}
+};
+
 export const getById = (dataPokemon, pokemonId) => {
   const pokemon = dataPokemon.find(poke => {
-    return poke.id === pokemonId
-  })
+    return poke.id === pokemonId;
+  });
   return pokemon;
-}
+};
 
 export const typeSearch = (dataPokemon, typePokemon) => {
   const typeSearchPokemons = listing(dataPokemon).filter(poke => {

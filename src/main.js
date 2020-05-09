@@ -15,7 +15,6 @@ document.getElementById("btn-order").addEventListener("click", orderFilter);
 loadMore.addEventListener("click", function () { renderList(dataPokemon, 40) });
 loadAll.addEventListener("click", function () { renderList(dataPokemon, 0) });
 
-const searchType = document.getElementById("select-element");
 function searchTypeFilter() {
   const pokemonsFiltro = typeSearch(dataPokemon, "type", searchType.value);
   const qtdPokemon = (pokemonsFiltro.length / 151) * 100;
@@ -26,7 +25,6 @@ function searchTypeFilter() {
   renderList(pokemonsFiltro, 0);
 }
 
-const orderName = document.getElementById("select-order");
 function orderFilter() {
   calc.classList.remove("show");
   calc.classList.add("hide");
@@ -63,7 +61,6 @@ function orderFilter() {
   }
 }
 
-const searchName = document.getElementById("search");
 function searchNameFilter() {
   const pokemonsFiltro = nameSearch(dataPokemon, "name", searchName.value);
   calc.classList.remove("show");

@@ -3,7 +3,7 @@ export const listingType = (data, field) => {
     return [...prev, ...curr[field]];
   }, []);
   const newSet = new Set(types);
-  return [...newSet]
+  return [...newSet];
 };
 // listing não é mais utilizado
 export const nameSearch = (data, field, value) => {

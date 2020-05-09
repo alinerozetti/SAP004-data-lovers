@@ -4,7 +4,11 @@ import { nameSearch, typeSearch, listingType, orderBy, orderByWeight } from './d
 const dataPokemon = data.pokemon;
 const loadMore = document.getElementById("loadMore");
 const loadAll = document.getElementById("loadAll");
-const calc = document.getElementById("statistics")
+const calc = document.getElementById("statistics");
+const searchName = document.getElementById("search");
+const searchType = document.getElementById("select-element");
+const orderName = document.getElementById("select-order");
+
 document.getElementById("btn-name").addEventListener("click", searchNameFilter);
 document.getElementById("btn-element").addEventListener("click", searchTypeFilter);
 document.getElementById("btn-order").addEventListener("click", orderFilter);

@@ -1,6 +1,5 @@
 import data from './data/pokemon/pokemon.js';
-import { listing, nameSearch, typeSearch, listingType, orderByName, orderByWeight } from './data.js';
-
+import { nameSearch, typeSearch, listingType, orderBy, orderByWeight } from './data.js';
 
 const dataPokemon = data.pokemon;
 const loadMore = document.getElementById("loadMore");
@@ -8,10 +7,66 @@ const loadAll = document.getElementById("loadAll");
 const calc = document.getElementById("statistics")
 document.getElementById("btn-name").addEventListener("click", searchNameFilter);
 document.getElementById("btn-element").addEventListener("click", searchTypeFilter);
-document.getElementById("btn-order").addEventListener("click", orderNameFilter);
-loadMore.addEventListener("click", function () { renderList(listing(dataPokemon), 40) });
-loadAll.addEventListener("click", function () { renderList(listing(dataPokemon), 0) });
+document.getElementById("btn-order").addEventListener("click", orderFilter);
+loadMore.addEventListener("click", function () { renderList(dataPokemon, 40) });
+loadAll.addEventListener("click", function () { renderList(dataPokemon, 0) });
 
+const searchType = document.getElementById("select-element");
+function searchTypeFilter() {
+  const pokemonsFiltro = typeSearch(dataPokemon, "type", searchType.value);
+  const qtdPokemon = (pokemonsFiltro.length / 151) * 100;
+  calc.classList.remove("hide");
+  calc.classList.add("show");
+  calc.innerHTML = qtdPokemon.toFixed(0) + "% dos pokemons são deste tipo!";
+  document.getElementById("select-element").value = "";
+  renderList(pokemonsFiltro, 0);
+}
+
+const orderName = document.getElementById("select-order");
+function orderFilter() {
+  calc.classList.remove("show");
+  calc.classList.add("hide");
+
+  if (orderName.value === "name-asc") {
+    const pokemonsFiltro = orderBy(dataPokemon, "name");
+    orderName.value = ""
+    renderList(pokemonsFiltro, 0);
+  }
+  if (orderName.value === "name-des") {
+    const pokemonsFiltro = orderBy(dataPokemon, "name").reverse();
+    orderName.value = ""
+    renderList(pokemonsFiltro, 0);
+  }
+  if (orderName.value === "number-asc") {
+    const pokemonsFiltro = orderBy(dataPokemon, "id");
+    orderName.value = ""
+    renderList(pokemonsFiltro, 0);
+  }
+  if (orderName.value === "number-desc") {
+    const pokemonsFiltro = orderBy(dataPokemon, "id").reverse();
+    orderName.value = ""
+    renderList(pokemonsFiltro, 0);
+  }
+  if (orderName.value === "weight-asc") {
+    const pokemonsFiltro = orderByWeight(dataPokemon, "weight");
+    orderName.value = ""
+    renderList(pokemonsFiltro, 0);
+  }
+  if (orderName.value === "weight-desc") {
+    const pokemonsFiltro = orderByWeight(dataPokemon, "weight").reverse();
+    orderName.value = ""
+    renderList(pokemonsFiltro, 0);
+  }
+}
+
+const searchName = document.getElementById("search");
+function searchNameFilter() {
+  const pokemonsFiltro = nameSearch(dataPokemon, "name", searchName.value);
+  calc.classList.remove("show");
+  calc.classList.add("hide");
+  searchName.value = "";
+  renderList(pokemonsFiltro, 0);
+}
 
 function renderList(pokemons, qtd) {
   if (qtd == 20) {
@@ -58,59 +113,17 @@ function renderType(types) {
 }
 
 function init() {
-  const pokemons = listing(dataPokemon);
-  const types = listingType(dataPokemon);
-  renderList(pokemons, 20)
+  const types = listingType(dataPokemon, "type");
+  renderList(dataPokemon, 20)
   renderType(types)
 }
 init();
 
-const searchName = document.getElementById("search");
-function searchNameFilter() {
-  const pokemonsFiltro = nameSearch(dataPokemon, searchName.value);
-  calc.classList.remove("show");
-  calc.classList.add("hide");
-  searchName.value = "";
-  renderList(pokemonsFiltro, 0);
-}
 
-const searchType = document.getElementById("select-element");
-function searchTypeFilter() {
-  const pokemonsFiltro = typeSearch(dataPokemon, searchType.value);
-  const qtdPokemon = (pokemonsFiltro.length / 151) * 100;
-  calc.classList.remove("hide");
-  calc.classList.add("show");
-  calc.innerHTML = qtdPokemon.toFixed(0) + "% dos pokemons são deste tipo!";
-  document.getElementById("select-element").value = "";
-  renderList(pokemonsFiltro, 0);
-}
 
-const orderName = document.getElementById("select-order");
-function orderNameFilter() {
-  calc.classList.remove("show");
-  calc.classList.add("hide");
 
-  if (orderName.value === "name-asc") {
-    const pokemonsFiltro = orderByName(dataPokemon);
-    orderName.value = ""
-    renderList(pokemonsFiltro, 0);
-  }
-  if(orderName.value === "name-des") {
-    const pokemonsFiltro = orderByName(dataPokemon).reverse();
-    orderName.value = ""
-    renderList(pokemonsFiltro, 0);
-  }
-  if (orderName.value === "number") {
-    const pokemonsFiltro = listing(dataPokemon);
-    orderName.value = ""
-    renderList(pokemonsFiltro, 0);
-  }
-  if (orderName.value === "weight") {
-    const pokemonsFiltro = orderByWeight(dataPokemon);
-    orderName.value = ""
-    renderList(pokemonsFiltro, 0);
-  }
-}
+
+
 
 
 

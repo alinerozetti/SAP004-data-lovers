@@ -1,18 +1,40 @@
 import data from './data/pokemon/pokemon.js';
-import { getByNum, getById } from './data.js';
+import { get } from './data.js';
 
 const dataPokemon = data.pokemon;
 
 function init() {
   const params = new URLSearchParams(window.location.search);
   const num = params.get("num");
-  const pokemon = getByNum(dataPokemon, num);
+  const pokemon = get(dataPokemon, "num", num)
   dataPoke(pokemon);
   evolutionPokemon(pokemon);
   nextPokemon(pokemon);
   previousPokemon(pokemon);
 }
 init();
+
+function nextPokemon(pokemon) {
+  let pokemonId = pokemon.id + 1;
+  if (pokemonId === 152) {
+    pokemonId = 1
+  }
+  const next = get(dataPokemon, "id", pokemonId)
+  const nextId = document.getElementById("next")
+  nextId.innerHTML = `${next.name} N°${next.num} <i class="fas fa-arrow-circle-right"></i>`
+  nextId.href = `./detail?num=${next.num}`
+}
+
+function previousPokemon(pokemon) {
+  let pokemonId = pokemon.id - 1;
+  if (pokemonId === 0) {
+    pokemonId = 151
+  }
+  const previous = get(dataPokemon, "id", pokemonId)
+  const previousId = document.getElementById("previous")
+  previousId.innerHTML = `<i class="fas fa-arrow-circle-left"></i> ${previous.name} N°${previous.num}`
+  previousId.href = `./detail?num=${previous.num}`
+}
 
 function dataPoke(pokemon) {
   document.getElementById("name").innerHTML = `${pokemon.name} N°${pokemon.num}`;
@@ -34,7 +56,6 @@ function dataPoke(pokemon) {
   document.getElementById("type").innerHTML = htmlType
 }
 
-
 function evolutionPokemon(pokemon) {
   let evolutions = [];
   if (pokemon.prev_evolution) {
@@ -44,32 +65,8 @@ function evolutionPokemon(pokemon) {
     evolutions = [...evolutions, ...pokemon.next_evolution]
   }
   const html = evolutions.map(poke => {
-    const evolution = getByNum(dataPokemon, poke.num)
+    const evolution = get(dataPokemon, "num", poke.num)
     return `<li><a href="./detail?num=${poke.num}"> N°${poke.num}<img src="${evolution.img}">${poke.name}</a></li>`
   });
   document.getElementById("evolution").innerHTML = html.join("");
 }
-
-function nextPokemon(pokemon) {
-  let pokemonId = pokemon.id + 1;
-  if (pokemonId === 152) {
-    pokemonId = 1
-  }
-  const next = getById(dataPokemon, pokemonId)
-  const nextId = document.getElementById("next")
-  nextId.innerHTML = `${next.name} N°${next.num} <i class="fas fa-arrow-circle-right"></i>`
-  nextId.href = `./detail?num=${next.num}`
-}
-
-function previousPokemon(pokemon) {
-  let pokemonId = pokemon.id - 1;
-  if (pokemonId === 0) {
-    pokemonId = 151
-  }
-  const previous = getById(dataPokemon, pokemonId)
-  const previousId = document.getElementById("previous")
-  previousId.innerHTML = `<i class="fas fa-arrow-circle-left"></i> ${previous.name} N°${previous.num}`
-  previousId.href = `./detail?num=${previous.num}`
-}
-
-

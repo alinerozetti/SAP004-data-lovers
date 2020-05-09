@@ -1,59 +1,35 @@
-export const listing = (dataPokemon) => {
-  const pokemons = dataPokemon.map(poke => {
-    return {
-      img: poke.img,
-      name: poke.name,
-      num: poke.num,
-      id: poke.id,
-      type: poke.type,
-      weight: poke.weight
-    }
-  })
-  return pokemons;
-};
-
-export const listingType = (dataPokemon) => {
-  const pokemon = dataPokemon;
-  const types = pokemon.reduce(function (prev, curr) {
-    return [...prev, ...curr.type];
+export const listingType = (data, field) => {
+  const types = data.reduce(function (prev, curr) {
+    return [...prev, ...curr[field]];
   }, []);
   const newSet = new Set(types);
   return [...newSet]
 };
-
-export const orderByName = (dataPokemon) => {
-  return listing(dataPokemon).sort((a, b) => a.name > b.name ? 1 : -1);
-};
-
-export const orderByWeight = (dataPokemon) => {
-  return listing(dataPokemon).sort((a, b) =>
-    parseFloat(a.weight.substring(0, a.weight.length - 3)) > parseFloat(b.weight.substring(0, b.weight.length - 3)) ? 1 : -1);
-};
-
-export const nameSearch = (dataPokemon, namePokemon) => {
-  const nameSearchPokemons = listing(dataPokemon).filter(poke => {
-    return poke.name.toUpperCase().indexOf(namePokemon.toUpperCase()) === 0;
+// listing não é mais utilizado
+export const nameSearch = (data, field, value) => {
+  return data.filter(item => {
+    return item[field].toUpperCase().indexOf(value.toUpperCase()) === 0;
   });
-  return nameSearchPokemons;
 };
-
-export const getByNum = (dataPokemon, pokemonNum) => {
-  const pokemon = dataPokemon.find(poke => {
-    return poke.num === pokemonNum
-  })
-  return pokemon;
+// listing não é mais utilizado
+export const orderBy = (data, field) => {
+  return data.sort((a, b) => a[field] > b[field] ? 1 : -1);
 }
-export const getById = (dataPokemon, pokemonId) => {
-  const pokemon = dataPokemon.find(poke => {
-    return poke.id === pokemonId
-  })
-  return pokemon;
-}
-
-export const typeSearch = (dataPokemon, typePokemon) => {
-  const typeSearchPokemons = listing(dataPokemon).filter(poke => {
-    return poke.type[0] === typePokemon || poke.type[1] === typePokemon;
+// listing não é mais utilizado
+export const orderByWeight = (data, field) => {
+  return data.sort((a, b) =>
+    parseFloat(a[field].substring(0, a[field].length - 3)) > parseFloat(b[field].substring(0, b[field].length - 3)) ? 1 : -1);
+};
+// substitui o getByNum e getById
+export const get = (data, field, value) => {
+  return data.find(item => {
+    return item[field] === value;
   });
-  return typeSearchPokemons;
+}
+// listing não é mais utilizado
+export const typeSearch = (data, field, value) => {
+  return data.filter(item => {
+    return item[field][0] === value || item[field][1] === value;
+  });
 };
 

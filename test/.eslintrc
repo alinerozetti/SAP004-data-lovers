@@ -1,5 +1,8 @@
 {
   "env": {
-    "jest": true
+    "jest": true,
+    "browser": true,
+    "es6": true
+
   }
 }

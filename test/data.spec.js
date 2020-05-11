@@ -1,8 +1,9 @@
-import { typeSearch, get, orderBy, orderByWeight } from '../src/data.js';
+import { typeSearch, nameSearch, listingType, get, orderBy, orderByWeight } from '../src/data.js';
 
 const pokemons = [
   { "id": 1, "num": "001", "name": "Bulbasaur", "type": ["Grass", "Poison"], "weight": "6.9 kg" },
-  { "id": 41, "num": "041", "name": "Zubat", "type": ["Poison", "Flying"], "height": "0.79 m", }];
+  { "id": 41, "num": "041", "name": "Zubat", "type": ["Poison", "Flying"], "weight": "7.5 kg" },
+  { "id": 39, "num": "039", "name": "Jigglypuff", "type": ["Normal"], "weight": "5.5 kg" }];
 
 describe('pokemon', () => {
   it("testa o tipo", () => {
@@ -23,14 +24,17 @@ describe('pokemon', () => {
   it("testa a ordenação", () => {
     expect(orderBy(pokemons, "name")).toEqual([
       { "id": 1, "num": "001", "name": "Bulbasaur", "type": ["Grass", "Poison"], "weight": "6.9 kg" },
-      { "id": 41, "num": "041", "name": "Zubat", "type": ["Poison", "Flying"], "height": "0.79 m", }]);
+      { "id": 39, "num": "039", "name": "Jigglypuff", "type": ["Normal"], "weight": "5.5 kg" },
+      { "id": 41, "num": "041", "name": "Zubat", "type": ["Poison", "Flying"], "weight": "7.5 kg" }]);
   });
 
   it("teste ordenação por peso", () => {
     expect(orderByWeight(pokemons, "weight")).toEqual([
+      { "id": 39, "num": "039", "name": "Jigglypuff", "type": ["Normal"], "weight": "5.5 kg" },
       { "id": 1, "num": "001", "name": "Bulbasaur", "type": ["Grass", "Poison"], "weight": "6.9 kg" },
-      { "id": 41, "num": "041", "name": "Zubat", "type": ["Poison", "Flying"], "height": "0.79 m", }]);
+      { "id": 41, "num": "041", "name": "Zubat", "type": ["Poison", "Flying"], "weight": "7.5 kg" }]);
   });
+
 });
 
 

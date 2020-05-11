@@ -117,11 +117,11 @@ body{
 }
 
 .data-flex li{
-display:flex;
-justify-content: space-between;
-align-items: flex-start;
-padding: 8px;
-width: 500px;
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px;
+  width: 500px;
 }
 
 .data-flex li:nth-child(even) {

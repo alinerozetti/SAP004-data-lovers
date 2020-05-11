@@ -35,6 +35,17 @@ describe('pokemon', () => {
       { "id": 41, "num": "041", "name": "Zubat", "type": ["Poison", "Flying"], "weight": "7.5 kg" }]);
   });
 
+ /* it("pesquisa os tipos dos pokemons",() => {
+    expect(listingType(pokemons,"type")).toEqual([
+      "Grass","Poison","Flying","Normal"
+    ]);
+  });*/
+
+  it("procura pelo nome do pokemon", () => {
+    expect(nameSearch(pokemons,"name", "Zubat")).toEqual([
+      { "id": 41, "num": "041", "name": "Zubat", "type": ["Poison", "Flying"], "weight": "7.5 kg" }]);
+  });
+  
 });
 
 

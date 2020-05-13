@@ -22,7 +22,6 @@ body{
   text-align: center;
 }
 
-
 .name-pokemon{
   color: cornsilk;
   font-size: 50px ;
@@ -104,6 +103,7 @@ body{
   border-radius: 10px;
   margin-top: 120px;
   margin-bottom: 50px;
+  padding: 20px;
 }
 .data h3{
   font-size: 30px;
@@ -183,6 +183,90 @@ footer {
   box-sizing: border-box;
   text-align: center;
 }
+
+@media only screen and (max-device-width: 1050px){
+  .data-pokemon{
+    flex-direction: column;
+  }
+  .data-type ul{
+    padding: 0 0px;
+    margin: auto;
+  }
+  .next-prev{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .next-prev a{
+    font-size: 25px;
+  }
+  .data{
+    width: 600px;
+    padding: 20px;
+    margin-top: auto;
+    margin-left: 60px;
+  }
+  .data-flex ul{
+    padding: 0px 50px;
+  }
+  .evolu{
+    margin-top: auto;
+  }
+  .btn-end{
+    margin-bottom: 50px;
+  }
+  .img{
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-device-width: 700px){
+  .fundo img{
+    width: 200px;
+  }
+  .name-pokemon{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  .next-prev a{
+    font-size: 12px;
+    margin: 5px ;
+  }
+  .img{
+    max-width: 200px;
+    max-height: 150px
+  }
+  .data-type{
+   font-size: 20px;
+  }
+  .data-flex{
+    font-size: 10px;
+  }
+  .data{
+    width: 220px;
+    margin-left: 25px ;
+  }
+  .data h3{
+   font-size: 25px;
+  }
+  .data li{
+    width: 200px;
+  }
+
+  .data ul{
+    padding: 0;
+  }
+
+  .evolu li{
+    width: 100px;
+    margin: 0 10px 30px;
+  }
+
+  .evolu img{
+    max-width: 100px;
+    max-height: 800px;
+  }
+}
+
 
 
 /*@media only screen and (max-device-width: 1050px){

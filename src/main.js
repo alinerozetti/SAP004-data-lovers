@@ -1,6 +1,7 @@
 import data from './data/pokemon/pokemon.js';
 import { nameSearch, typeSearch, listingType, orderBy, orderByWeight } from './data.js';
 
+
 const dataPokemon = data.pokemon;
 const loadMore = document.getElementById("loadMore");
 const loadAll = document.getElementById("loadAll");
@@ -28,36 +29,25 @@ function searchTypeFilter() {
 function orderFilter() {
   calc.classList.remove("show");
   calc.classList.add("hide");
+  const pokemonsFiltro = orderByValue(orderName.value)
+  orderName.value = ""
+  renderList(pokemonsFiltro, 0);
+}
 
-  if (orderName.value === "name-asc") {
-    const pokemonsFiltro = orderBy(dataPokemon, "name");
-    orderName.value = ""
-    renderList(pokemonsFiltro, 0);
-  }
-  if (orderName.value === "name-des") {
-    const pokemonsFiltro = orderBy(dataPokemon, "name").reverse();
-    orderName.value = ""
-    renderList(pokemonsFiltro, 0);
-  }
-  if (orderName.value === "number-asc") {
-    const pokemonsFiltro = orderBy(dataPokemon, "id");
-    orderName.value = ""
-    renderList(pokemonsFiltro, 0);
-  }
-  if (orderName.value === "number-desc") {
-    const pokemonsFiltro = orderBy(dataPokemon, "id").reverse();
-    orderName.value = ""
-    renderList(pokemonsFiltro, 0);
-  }
-  if (orderName.value === "weight-asc") {
-    const pokemonsFiltro = orderByWeight(dataPokemon, "weight");
-    orderName.value = ""
-    renderList(pokemonsFiltro, 0);
-  }
-  if (orderName.value === "weight-desc") {
-    const pokemonsFiltro = orderByWeight(dataPokemon, "weight").reverse();
-    orderName.value = ""
-    renderList(pokemonsFiltro, 0);
+function orderByValue(value) {
+  switch (value) {
+    case "name-asc":
+      return orderBy(dataPokemon, "name");
+    case "name-desc":
+      return orderBy(dataPokemon, "name").reverse();
+    case "number-asc":
+      return orderBy(dataPokemon, "id");
+    case "number-desc":
+      return orderBy(dataPokemon, "id").reverse();
+    case "weight-asc":
+      return orderByWeight(dataPokemon, "weight");
+    case "weight-desc":
+      return orderByWeight(dataPokemon, "weight").reverse();
   }
 }
 

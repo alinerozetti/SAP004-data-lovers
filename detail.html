@@ -5,27 +5,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokediary</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="detail.css" />
 </head>
 
 <body>
-  <header class="fundo">
-    <h1><a href="https://fontmeme.com/pt/fonte-de-pokemon-go/"><img
-          src="https://fontmeme.com/permalink/200424/e2746fe85fdaab09123fdca6b916bb9c.png" alt="fonte-de-pokemon-go"
-          border="0"></a></h1>
+  <header id="gif" class="fundo">
+    <a>
+      <img class="title" src="https://fontmeme.com/permalink/200429/65da7acdb7f16431618ddbf607e03edc.png" alt="fonte-de-pokemon-go"
+        border="0">
+    </a>
   </header>
-  <h3 id="name"></h3>
-  <img id="imgPoke" />
-  <ul>
-    <li id="type"></li>
-    <li id="weaknesses"></li>
-    <li id="candy-count"></li>
-    <li id="height"></li>
-    <li id="weight"></li>
-  </ul>
-  <ul id="evolution"></ul>
-
-  <button>voltar</button>
-
+  <main>
+    <h3 id="name" class="name-pokemon"></h3>
+    <div class="next-prev">
+      <a id="previous" class="next-previous"></a>
+      <a id="next" class="next-previous"></a>
+    </div>
+    <div class="data-pokemon">
+      <div>
+        <img id="imgPoke" class="img" />
+        <div class="data-type">
+          <label>TIPO</label>
+          <ul id="type"></ul>
+        </div>
+      </div>
+      <div class="data">
+        <h3>Dados do Pokémon</h3>
+        <div class="data-flex">
+          <ul>
+            <li><label>ALTURA</label><label id="height"></label></li>
+            <li><label>PESO</label><label id="weight"></label></li>
+            <li><label>CANDY</label><label id="candy"></label></li>
+            <li><label>CANDY COUNT</label><label id="candy-count"></label></li>
+            <li><label>OVOS</label><label id="egg"></label></li>
+            <li><label>CHANCE DE APARECER</label><label id="spawn_chance"></label></li>
+            <li><label>MÉDIA</label><label id="avg_spawns"></label></li>
+            <li><label>TEMPO DE DESOVA</label><label id="spawn_time"></label></li>
+            <li><label>MULTIPLICADORES</label><label id="multipliers"></label></li>
+            <li><label>FRAQUEZA</label><label id="weaknesses"></label></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <ul id="evolution" class="evolu"></ul>
+    <div class="btn-end">
+      <button class="btn-explore"><a href="index.html">Explorar Mais Pokemons</a></button>
+    </div>
+  </main>
   <footer class="footer">© By Aline & Mariana - 2020</footer>
   <script src="details.js" type="module"></script>
 </body>

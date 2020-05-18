@@ -1,56 +1,35 @@
-import data from './data/pokemon/pokemon.js';
-
-export const listing = () => {
-  const pokemons = data.pokemon.map(poke => {
-    return {
-      img: poke.img,
-      name: poke.name,
-      num: poke.num,
-      id: poke.id,
-      type: poke.type,
-      weight: poke.weight
-    }
-  })
-  return pokemons;
-};
-
-export const listingType = () => {
-  const pokemon = data.pokemon;
-  const types = pokemon.reduce(function (prev, curr) {
-    return [...prev, ...curr.type];
+export const listingType = (data, field) => {
+  const types = data.reduce(function (prev, curr) {
+    return [...prev, ...curr[field]];
   }, []);
-  return [...new Set(types)];
+  const newSet = new Set(types);
+  return [...newSet];
 };
 
-export const orderByName = () => {
-  return listing().sort((a, b) => a.name > b.name ? 1 : -1);
-};
-
-export const orderByWeight = () => {
-  return listing().sort((a, b) =>
-    parseFloat(a.weight.substring(0, a.weight.length - 3)) > parseFloat(b.weight.substring(0, b.weight.length - 3)) ? 1 : -1);
-};
-
-export const nameSearch = (namePokemon) => {
-  const nameSearchPokemons = listing().filter(poke => {
-    return poke.name.toUpperCase() === namePokemon.toUpperCase();
+export const nameSearch = (data, field, value) => {
+  return data.filter(item => {
+    return item[field].toUpperCase().indexOf(value.toUpperCase()) === 0;
   });
-  return nameSearchPokemons;
 };
 
-export const getByNum = (pokemonNum) => {
-  const pokemon = data.pokemon.find(poke => {
-    return poke.num === pokemonNum
-  })
-  return pokemon;
+export const orderBy = (data, field) => {
+  return data.sort((a, b) => a[field] > b[field] ? 1 : -1);
 }
 
-export const typeSearch = (typePokemon) => {
-  const typeSearchPokemons = listing().filter(poke => {
-    for (const tipo of poke.type) {
-      return tipo === typePokemon;
-    }
+export const orderByWeight = (data, field) => {
+  return data.sort((a, b) =>
+    parseFloat(a[field].substring(0, a[field].length - 3)) > parseFloat(b[field].substring(0, b[field].length - 3)) ? 1 : -1);
+};
+
+export const get = (data, field, value) => {
+  return data.find(item => {
+    return item[field] === value;
   });
-  return typeSearchPokemons;
+}
+
+export const typeSearch = (data, field, value) => {
+  return data.filter(item => {
+    return item[field][0] === value || item[field][1] === value;
+  });
 };
 

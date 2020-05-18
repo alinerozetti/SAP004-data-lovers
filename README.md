@@ -15,7 +15,7 @@ Este projeto tem como objetivo atender a usuários do jogo Pokémon Go, que des
 Essas informações podem ser atribuidas ao clicar em um determinado Pokémon
 ou em uma filtragem de nome, tipo ou de ordenação.
 
-Para acesso à plataforma, o usuário deverá utilizar o link:
+Para acesso à plataforma, o usuário deverá utilizar o link: https://marianambarros.github.io/SAP004-data-lovers/
 
 ## 2. Usuário (Persona)
 Para o desenvolvimento nas histórias de usuario criamos a persona.

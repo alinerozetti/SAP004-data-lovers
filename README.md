@@ -65,9 +65,8 @@ ou em uma filtragem de nome, tipo ou de ordenação.
 ## 5. Protótipo
 - Rascunho no papel:
   <div>
-<img src="./src/img/protTela1.png" width="200">
-<img src="./src/img/protTela2.png" width="197">
-</div>
+    <img src="./src/img/protTela1.png" width="200"> <img src="./src/img/protTela2.png" width="197">
+  </div>
 
 - Esboço no Computador:
   ![Protótipo](/src/img/protTelaPc.png)
